@@ -3,6 +3,11 @@
 # exit script if return code != 0
 set -e
 
+if [ -z "$DB_HOST" ]; then
+    echo "Need to set DB_HOST"
+    exit 1
+fi  
+
 config=/mattermost/config.json
 
 DB_HOST=${DB_HOST}
