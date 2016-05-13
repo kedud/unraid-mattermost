@@ -8,6 +8,7 @@ RUN mkdir -p /mattermost
 
 # add supervisor file for application
 ADD mattermost.conf /etc/supervisor/conf.d/
+ADD config.template.json /
 
 # add bash scripts
 RUN mkdir /scripts
@@ -19,6 +20,8 @@ RUN chmod +x /scripts/*.sh && \
 
 # map /config to host defined config path (used to store configuration from app)
 VOLUME /mattermost
+
+EXPOSE 8065
 
 # run script to set uid, gid and permissions
 CMD ["/bin/bash", "/scripts/init.sh"]
