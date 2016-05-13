@@ -3,6 +3,8 @@
 # exit script if return code != 0
 set -e
 
+export DEBIAN_FRONTEND=noninteractive
+
 # Install deps
 apt-get -q update
 apt-get install -qy wget supervisor
