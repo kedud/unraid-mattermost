@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# exit script if return code != 0
+set -e
+
 config=/mattermost/config.json
 
 DB_HOST=${DB_HOST}
@@ -23,15 +27,6 @@ then
 else
     echo SKIP
 fi
-
-echo "Wait until database is ready..."
-until nc -z $DB_HOST $DB_PORT
-do
-    sleep 1
-done
-
-# Wait to avoid "panic: Failed to open sql connection the database system is starting up"
-sleep 1
 
 echo "Starting mattermost"
 cd /opt/mattermost/bin
