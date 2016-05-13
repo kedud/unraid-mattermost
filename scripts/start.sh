@@ -3,7 +3,6 @@ config=/mattermost/config.json
 
 DB_HOST=${DB_HOST}
 DB_PORT=${DB_PORT:-3306}
-DB_TYPE=${DB_TYPE:-mysql}
 DB_USER=${DB_USER:-mattermost}
 DB_PASS=${DB_PASS:-mm_password}
 DB_NAME=${DB_NAME:-mattermost}
@@ -15,7 +14,6 @@ echo -ne "Configure database and email settings\n"
 if [ ! -f $config ]
 then
     cp /config.template.json $config
-    sed -Ei "s/DB_TYPE/$DB_TYPE/" $config
     sed -Ei "s/DB_HOST/$DB_HOST/" $config
     sed -Ei "s/DB_PORT/$DB_PORT/" $config
     sed -Ei "s/DB_USER/$DB_USER/" $config
