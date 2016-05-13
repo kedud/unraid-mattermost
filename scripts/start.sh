@@ -1,7 +1,7 @@
 #!/bin/bash
 config=/mattermost/config.json
 
-DB_HOST=${DB_HOST:-db}
+DB_HOST=${DB_HOST}
 DB_PORT=${DB_PORT:-3306}
 DB_TYPE=${DB_TYPE:-mysql}
 DB_USER=${DB_USER:-mattermost}
@@ -11,10 +11,11 @@ DB_NAME=${DB_NAME:-mattermost}
 GMAIL_ADDRESS=${GMAIL_ADDRESS}
 GMAIL_PASSWORD=${GMAIL_PASSWORD}
 
-echo -ne "Configure database and email settings"
+echo -ne "Configure database and email settings\n"
 if [ ! -f $config ]
 then
     cp /config.template.json $config
+    sed -Ei "s/DB_TYPE/$DB_TYPE/" $config
     sed -Ei "s/DB_HOST/$DB_HOST/" $config
     sed -Ei "s/DB_PORT/$DB_PORT/" $config
     sed -Ei "s/DB_USER/$DB_USER/" $config
@@ -36,4 +37,4 @@ sleep 1
 
 echo "Starting mattermost"
 cd /opt/mattermost/bin
-./platform
+./platform -config="/mattermost/config.json"
