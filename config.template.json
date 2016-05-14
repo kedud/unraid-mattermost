@@ -23,7 +23,7 @@
     },
     "SqlSettings": {
         "DriverName": "mysql",
-        "DataSource": "$DB_USER:$DB_PASS@tcp($DB_HOST:$DB_PORT)/$DB_NAME",
+        "DataSource": "DB_USER:DB_PASS@tcp(DB_HOST:DB_PORT)/DB_NAME",
         "DataSourceReplicas": [],
         "MaxIdleConns": 10,
         "MaxOpenConns": 10,
