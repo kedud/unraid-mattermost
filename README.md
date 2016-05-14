@@ -1,8 +1,8 @@
 # Application
-[Plex](https://plex.tv/)
+[Mattermost](http://www.mattermost.org/)
 
 # Description
-The Plex Media Server enriches your life by organizing all your personal media, presenting it beautifully and streaming it to all of your devices. It's easy to use, it's awesome, and it's free!
+Mattermost is an open source, self-hosted Slack-alternative
 
 # Access application
 `http://<host ip>:8065/`
