@@ -7,6 +7,12 @@ Mattermost is an open source, self-hosted Slack-alternative
 # Access application
 `http://<host ip>:8065/`
 
+# Database
+This image does not include a database. You will need to run your database from another image or another server. Only MySQL (or mariadb) is supported by this image.
+
+# Email
+The config file is set to use the gmail SMTP server. If you would like to use a different email provider, you can change the email settings in the mattermost web UI.
+
 # Run the application
 The ```PUID``` and ```PGID``` values are not necessary for unRAID 6.
 ## Usage
@@ -21,10 +27,10 @@ docker run -d \
   -e GMAIL_ADDRESS=<gmail address to send email from> \
   -e GMAIL_PASSWORD=<password for the gmail account> \
   -e DB_HOST=<IP or domain name for mysql database> \
-  -e DB_PORT=<mysql port> \
-  -e DB_USER=<mysql user to connect as> \
+  -e DB_PORT=<defaults to '3306'> \
+  -e DB_USER=<defaults to 'mattermost'> \
   -e DB_PASS=<password for mysql user> \
-  -e DB_NAME=<name of the mysql database to use> \
+  -e DB_NAME=<defaults to 'mattermost'> \
   tyler43636/unraid-mattermost
 ```
 
