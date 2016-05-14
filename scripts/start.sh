@@ -28,6 +28,8 @@ then
     sed -Ei "s/DB_USER/$DB_USER/" $config
     sed -Ei "s/DB_PASS/$DB_PASS/" $config
     sed -Ei "s/DB_NAME/$DB_NAME/" $config
+    sed -Ei "s/GMAIL_ADDRESS/$GMAIL_ADDRESS/" $config
+    sed -Ei "s/GMAIL_PASSWORD/$GMAIL_PASSWORD/" $config
     echo OK
 else
     echo SKIP
