@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 MAINTAINER Tyler Payne <tyler43636@gmail.com>
 
-ENV VERSION v3.0.0
+ENV VERSION 3.0.0
 
 RUN mkdir -p /mattermost/data
 
