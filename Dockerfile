@@ -4,7 +4,7 @@ MAINTAINER Tyler Payne <tyler43636@gmail.com>
 
 ENV VERSION 2.2.0
 
-RUN mkdir -p /mattermost
+RUN mkdir -p /mattermost/data
 
 # add supervisor file for application
 ADD mattermost.conf /etc/supervisor/conf.d/
